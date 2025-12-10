@@ -239,10 +239,15 @@ func (w *whitelist) Exec(ctx context.Context, qCtx *query_context.Context, next 
 	// Get and normalize request path
 	requestPath := normalizePath(qCtx.ReqMeta().GetPath())
 
-	// Check path whitelist
+	// Check path whitelist (path_list and path_ecs both qualify as allowed paths)
+	pathConfigured := len(w.pathList) > 0 || len(w.pathECS) > 0
 	pathMatched := false
-	if len(w.pathList) > 0 {
-		_, pathMatched = w.pathList[requestPath]
+	if pathConfigured {
+		if _, ok := w.pathList[requestPath]; ok {
+			pathMatched = true
+		} else if _, ok := w.pathECS[requestPath]; ok {
+			pathMatched = true
+		}
 	} else {
 		// If no path whitelist configured, consider path check as passed (when requireBoth is false)
 		pathMatched = !w.requireBoth
