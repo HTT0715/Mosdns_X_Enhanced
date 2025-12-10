@@ -1,0 +1,2 @@
+# Mosdns_X_Enhanced
+基于Mosdns_X的增强版本，支持了DOH的白名单路径和ip来源
