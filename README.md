@@ -138,7 +138,7 @@ plugins:
 - 建议将此插件放在处理链的前端，以尽早过滤未授权请求
 - 路径 token 建议使用足够复杂和随机的字符串，以提高安全性
 
-**📖 详细使用文档：** 查看 [doh_whitelist 插件完整文档](docs/PLUGIN_DOH_WHITELIST.md) 获取更多配置示例、客户端配置方法、故障排查和安全建议。
+**📖 详细使用文档：** 查看 [doh_whitelist 插件完整文档](https://github.com/HTT0715/Mosdns_X_Enhanced/blob/main/docs/DOE_WHITELIST_WITH_ECS.md) 获取更多配置示例、客户端配置方法、故障排查和安全建议。
 
 #### 电报社区：
 
